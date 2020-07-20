@@ -8,6 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./styles/styles.css">
 </head>
 <body>
     <header>
@@ -21,7 +22,7 @@ session_start();
            if (isset($_SESSION['adminStatus'])){
                 $adminStatus = $_SESSION['adminStatus'];
                 if ($adminStatus==true){
-                    echo  '<li><a href="projects.php">Projects</a></li>';
+                    echo  '<li><a href="./project.php">Projects</a></li>';
                 }
            }
            ?>
