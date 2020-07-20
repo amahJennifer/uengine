@@ -17,7 +17,15 @@ session_start();
         </a>
            <ul>
            <li><a href="index.php">Home</a></li>
-           <li><a href="#">Projects</a></li>
+           <?php
+           if (isset($_SESSION['adminStatus'])){
+                $adminStatus = $_SESSION['adminStatus'];
+                if ($adminStatus==true){
+                    echo  '<li><a href="projects.php">Projects</a></li>';
+                }
+           }
+           ?>
+          
            <li><a href="#">Work</a></li>
            </ul>
            <div>
@@ -38,8 +46,15 @@ session_start();
                 }
 
                 ?>
+              <?php 
+              if(isset($_SESSION['userId'])){
+                echo ' ' ;
+
+            }else {
+                echo ' <a href="signup.php">Signup</a> ';
+            }
+              ?>
               
-                <a href="signup.php">Signup</a>
               
            </div>
           

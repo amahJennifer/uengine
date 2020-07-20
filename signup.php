@@ -11,7 +11,8 @@ require "header.php";
         if($_GET['error']=="emptyfields"){
             echo '<p style="color:red;">Fill in all fields </p>';
         }
-    }else if($_GET['signup']=="success"){
+    }else if(isset($_GET['signup'])){
+        if($_GET['signup']=="success")
         echo '<p style="color:green;">Signed up Successfully </p>';
     }
 
