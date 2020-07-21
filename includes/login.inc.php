@@ -29,10 +29,16 @@ if(isset($_POST['login-submit'])){
                     $_SESSION['userId'] =$row['id'];
                     $_SESSION['userEmail'] =$row['email'];
                     $_SESSION['userName'] =$row['firstName'];
+                    $_SESSION['adminStatus'] =$row['is_admin'];
 
-
-                    header("Location: ../index.php?login=success");
+                    if ($row['is_admin']==true){
+                        header("Location: ../admin.php?login=success");
                     exit();
+                    }
+                    else{
+                        header("Location: ../index.php?login=success");
+                        exit();
+                    }
                 }
             }else{
                 header("Location: ../index.php?error=nouser");
