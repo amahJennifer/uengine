@@ -19,3 +19,19 @@ table {
     background-color: black;
     color: white;
   }
+  .signup-btn{
+      background-color: black;
+      color:white;
+      border-radius: 5px;
+      border:none;
+      padding:0.5rem 1rem;
+  }
+  .learnmore-btn{
+    background-color: black;
+    color:white;
+    border-radius: 5px;
+    border:none;
+    padding:1rem 1.5rem;
+  }
+
+ 
