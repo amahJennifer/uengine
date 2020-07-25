@@ -16,15 +16,6 @@ if(empty($firstname)||empty($lastname)||empty($email)||empty($phone)||empty($pas
     header("Location: ../signup.php?error=emptyfields&firstname=".$firstname."&lastname=".$lastname);
     exit();
 }
-// else if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
-//     header("Location: ../signup.php?error=invalidemail&email=".$email);
-//     exit();
-// }
-// else if($password !== $confirmPassword){
-//     header("Location: ../signup.php?error=passwordcheck&email=".$email);
-//     exit();
-// }
-
 else {
 
     $sql="SELECT email from engineers WHERE email=?";
