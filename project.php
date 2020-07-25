@@ -10,24 +10,15 @@ require "memory.php";
         if(isset($_SESSION['userId'])){
             $name=$_SESSION['userName'];
             $adminStatus=$_SESSION['adminStatus'];
-            if($adminStatus==true){
-                echo "
+            if($adminStatus==!true){
                 
-            <p>Welcome Admin {$name} </p> ";
-            
-        
-            }else{
-                session_start();
-                session_unset();
-                session_destroy();
+            session_start();
+                    session_unset();
+                    session_destroy();
 
-                header("Location: ../index.php");
-                exit();
+                    header("Location: ../index.php");
+                    exit();
             }
-        
-        }else {
-            echo '<p>You are not logged in </p>';
-            exit();
         }
 ?>
         <div class="jumbotron">

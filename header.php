@@ -23,7 +23,15 @@ session_start();
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
            <ul class="navbar-nav mr-auto">
-           <li  class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+           <?php
+           if (isset($_SESSION['adminStatus'])){
+                $adminStatus = $_SESSION['adminStatus'];
+                if ($adminStatus==true){
+                    echo  '<li  class="nav-item"><a class="nav-link" href="index.php">Home</a></li>';
+                }
+           }
+           ?> 
+           
            <?php
            if (isset($_SESSION['adminStatus'])){
                 $adminStatus = $_SESSION['adminStatus'];
@@ -31,9 +39,27 @@ session_start();
                     echo  '<li  class="nav-item"><a class="nav-link" href="./project.php">Projects</a></li>';
                 }
            }
+           if (isset($_SESSION['adminStatus'])){
+                $adminStatus = $_SESSION['adminStatus'];
+                if ($adminStatus==true){
+                    
+                    echo  '<li><a class="nav-link" href="./engineer.php">Engineers</a></li>';
+                }
+                    
+           }
+           if (isset($_SESSION['adminStatus'])){
+                $adminStatus = $_SESSION['adminStatus'];
+                if ($adminStatus!==true){
+                    
+                    echo  '<li><a class="nav-link" href="./engineerView/projects.php">Projects</a></li>';
+                }
+                    
+           }
+
+
            ?>
           
-           <li><a class="nav-link" href="./engineer.php">Engineers</a></li>
+           
 
            <?php 
               if(isset($_SESSION['userId'])){
