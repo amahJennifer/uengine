@@ -36,7 +36,7 @@ if(isset($_POST['login-submit'])){
                     exit();
                     }
                     else{
-                        header("Location: ../index.php?login=success");
+                        header("Location: ../engineerView/projects.php?login=success");
                         exit();
                     }
                 }

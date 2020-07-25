@@ -3,12 +3,12 @@ require "header.php";
 require "./includes/projects.inc.php";
 $projectname="";
 ?>
-<?php
 
+<?php
 $mysqli= new mysqli('localhost','root','1527','uengine') or die(mysqli_error($mysqli));
 $engines=$mysqli->query("SELECT * FROM engineers") or die(mysqli_error($mysqli)) ;
-    
 ?>
+
 <main>
 <?php
 
@@ -51,14 +51,25 @@ if(isset($_SESSION['project_title'])){
 
 <?php
     if(isset($_GET['assign'])){
+        
         $sucess_msg="Successfully Added Engineer";
     }else {
         $sucess_msg="";
     }
 ?>
 
-<span style="color:green;"><?="{$sucess_msg}"?></span>
-<span style="color:green;"><?="{$resultCount}"?></span>
+<?php
+set_time_limit(3);
+
+while ($i<=3)
+{
+    echo "<span>{$sucess_msg}</span>";
+
+        sleep(3);
+        $i++;
+
+}
+?>
 
 
 <?php while($row=$engines->fetch_assoc()) :?>
