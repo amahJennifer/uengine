@@ -10,14 +10,8 @@ require "header.php";
 if(isset($_SESSION['userId'])){
     $name=$_SESSION['userName'];
     $adminStatus=$_SESSION['adminStatus'];
-    if($adminStatus==true){
-         echo "
-         
-    <p>Welcome Admin {$name} </p> ";
-    
-   
-    }else{
-        session_start();
+    if($adminStatus==false){
+         session_start();
         session_unset();
         session_destroy();
 
