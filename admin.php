@@ -15,8 +15,3 @@ if(isset($_SESSION['userId'])){
  
 </main>
 
-
-<?php
-require "footer.php";
-
-?>

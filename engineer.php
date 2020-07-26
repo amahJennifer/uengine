@@ -81,8 +81,3 @@ $engines=$mysqli->query("SELECT * FROM engineers") or die(mysqli_error($mysqli))
 </main>
 
 
-<?php
-require "footer.php";
-
-?>
-

@@ -13,13 +13,20 @@ require "dbh.inc.php";
        session_start();
        $_SESSION['project_id'] =$project['id'];
        $_SESSION['project_title'] =$project['project_title'];
+       $_SESSION['project_deadline'] =$project['project_deadline'];
        $_SESSION['project_eng'] =$project['project_eng'];
+       $_SESSION['project_description'] =$project['project_description'];
        
     }
 
      if (isset($_GET['engineer_id'])){
        $e_id=$_GET['engineer_id'];
        $p_id=$_SESSION['project_id'];
+       $p_title=$_SESSION['project_title'];
+       $p_deadline=$_SESSION['project_deadline']; 
+       $p_description=$_SESSION['project_description'];
+
+
 
        $sql="SELECT * from project_eng WHERE project_id=$p_id AND engineer_id=$e_id;";
       
@@ -41,8 +48,8 @@ require "dbh.inc.php";
         }
         else {
             $engineCount=$_SESSION['project_id'] + 1;
-            $sql="INSERT INTO project_eng (project_id,engineer_id) VALUES (?,?); " ;
-            $sql2=" UPDATE projects SET project_eng=$engineCount + 1 WHERE id =?;" ;
+            $sql="INSERT INTO project_eng (project_id,project_title,project_description,project_deadline,engineer_id) VALUES (?,?,?,?,?); " ;
+            $sql2=" UPDATE projects SET project_eng=$engineCount WHERE id =?;";
 
             $stmt=mysqli_stmt_init($conn);
             $stmt2=mysqli_stmt_init($conn);
@@ -61,7 +68,7 @@ require "dbh.inc.php";
                     exit();
                 }
                 else{
-                    mysqli_stmt_bind_param($stmt,"ii",$p_id,$e_id);
+                    mysqli_stmt_bind_param($stmt,"isssi",$p_id,$p_title,$p_description,$p_deadline,$e_id);
 
                     mysqli_stmt_execute($stmt);
                     header("Location: ./assign.php?assign=success");   
