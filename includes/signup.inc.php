@@ -16,6 +16,7 @@ if(empty($firstname)||empty($lastname)||empty($email)||empty($phone)||empty($pas
     header("Location: ../signup.php?error=emptyfields&firstname=".$firstname."&lastname=".$lastname);
     exit();
 }
+
 else {
 
     $sql="SELECT email from engineers WHERE email=?";

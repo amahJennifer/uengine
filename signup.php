@@ -41,12 +41,10 @@ require "header.php";
                 <input class="form-control" type="password" name="password" placeholder="Password">
             </div>
              <div class="form-group"> 
-                <label for="phone">Password</label>
+                <label for="phone">Confirm Password</label>
                  <input class="form-control" type="password" name="pwd-repeat" placeholder="Confirm Password">
             </div>
             
-            
-           
             <button class="signup-btn" type="submit" name="signup-submit">Signup</button>
         </form>
 

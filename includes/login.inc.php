@@ -32,11 +32,11 @@ if(isset($_POST['login-submit'])){
                     $_SESSION['adminStatus'] =$row['is_admin'];
 
                     if ($row['is_admin']==true){
-                        header("Location: ../admin.php?login=success");
+                        header("Location: ../project.php?login=success");
                     exit();
                     }
                     else{
-                        header("Location: ../engineerView/projects.php?login=success");
+                        header("Location: ../projects.php?login=success");
                         exit();
                     }
                 }
