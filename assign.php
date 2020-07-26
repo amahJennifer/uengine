@@ -56,19 +56,7 @@ if(isset($_SESSION['project_title'])){
     }else {
         $sucess_msg="";
     }
-?>
-
-<?php
-set_time_limit(3);
-
-while ($i<=3)
-{
     echo "<span>{$sucess_msg}</span>";
-
-        sleep(3);
-        $i++;
-
-}
 ?>
 
 
@@ -89,9 +77,3 @@ while ($i<=3)
 </main>
 
 
-
-
-<?php
-require "footer.php";
-
-?>

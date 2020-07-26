@@ -29,6 +29,7 @@ session_start();
                 if ($adminStatus==true){
                     echo  '<li  class="nav-item"><a class="nav-link" href="index.php">Home</a></li>';
                 }
+
            }
            ?> 
            
@@ -36,41 +37,23 @@ session_start();
            if (isset($_SESSION['adminStatus'])){
                 $adminStatus = $_SESSION['adminStatus'];
                 if ($adminStatus==true){
-                    echo  '<li  class="nav-item"><a class="nav-link" href="./project.php">Projects</a></li>';
-                }
-           }
-           if (isset($_SESSION['adminStatus'])){
-                $adminStatus = $_SESSION['adminStatus'];
-                if ($adminStatus==true){
                     
                     echo  '<li><a class="nav-link" href="./engineer.php">Engineers</a></li>';
+                     echo  '<li  class="nav-item"><a class="nav-link" href="./project.php">Projects</a></li>';
                 }
-                    
-           }
-           if (isset($_SESSION['adminStatus'])){
-                $adminStatus = $_SESSION['adminStatus'];
-                if ($adminStatus!==true){
-                    
-                    echo  '<li><a class="nav-link" href="./engineerView/projects.php">Projects</a></li>';
-                }
-                    
-           }
+            }
 
-
-           ?>
-          
-           
-
-           <?php 
-              if(isset($_SESSION['userId'])){
+             if(isset($_SESSION['userId'])){
                 echo ' ' ;
 
             }else {
                 echo ' <li class="nav-item"><a class="nav-link" href="signup.php">Signup</a> </li>';
             }
-              ?>
-
+           ?>
+          
+    
            </ul>
+           
             <?php
                 if(isset($_SESSION['userId'])){
                     echo ' <form class="form-inline my-2 my-lg-0" action="includes/logout.inc.php" method="post">

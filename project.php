@@ -1,7 +1,6 @@
 
 <?php
 require "header.php";
-require "memory.php";  
 ?>
 
 <main>
@@ -67,7 +66,6 @@ $pro=$mysqli->query("SELECT * FROM projects") or die(mysqli_error($mysqli)) ;
             <th>Project Deadline</th>
             <th>Assign Engineers</th>
         </tr>
- <!-- The Modal -->
                         
 
         <?php while($row=$pro->fetch_assoc()) :?>
@@ -89,9 +87,4 @@ $pro=$mysqli->query("SELECT * FROM projects") or die(mysqli_error($mysqli)) ;
  
 </main>
 
-
-<?php
-require "footer.php";
-
-?>
 
