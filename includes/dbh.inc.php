@@ -1,10 +1,11 @@
 <?php
+include "env.php";
 
-$servename="localhost";
-$dbUsername="root";
-$dbPassword="1527";
-$dbName="uengine";
-
+$servename=$_ENV['DB_HOST'];
+$dbUsername=$_ENV['DB_USERNAME'];
+$dbPassword=$_ENV['DB_PASSWORD'];
+$dbName=$_ENV['DB_NAME'];
+ 
 $conn =mysqli_connect($servename,$dbUsername,$dbPassword,$dbName);
 
 if(!$conn){

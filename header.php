@@ -1,7 +1,6 @@
 <?php
-session_start();
 
-?>
+session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,57 +22,47 @@ session_start();
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
            <ul class="navbar-nav mr-auto">
-           <?php
-           if (isset($_SESSION['adminStatus'])){
-                $adminStatus = $_SESSION['adminStatus'];
-                if ($adminStatus==true){
-                    echo  '<li  class="nav-item"><a class="nav-link" href="index.php">Home</a></li>';
-                }
-
-           }
-           ?> 
+           <?php if (isset($_SESSION['adminStatus'])) {
+               $adminStatus = $_SESSION['adminStatus'];
+               if ($adminStatus == true) {
+                   echo '<li  class="nav-item"><a class="nav-link" href="index.php">Home</a></li>';
+               }
+           } ?> 
            
            <?php
-           if (isset($_SESSION['adminStatus'])){
-                $adminStatus = $_SESSION['adminStatus'];
-                if ($adminStatus==true){
-                    
-                     echo  '<li><a class="nav-link" href="./engineer.php">Engineers</a></li>';
-                     echo  '<li  class="nav-item"><a class="nav-link" href="./project.php">Projects</a></li>';
-                }
-                else{
-                    echo  '<li  class="nav-item"><a class="nav-link" href="./projects.php">Projects</a></li>';
-                }
-            }
+           if (isset($_SESSION['adminStatus'])) {
+               $adminStatus = $_SESSION['adminStatus'];
+               if ($adminStatus == true) {
+                   echo '<li><a class="nav-link" href="./engineer.php">Engineers</a></li>';
+                   echo '<li  class="nav-item"><a class="nav-link" href="./project.php">Projects</a></li>';
+               } else {
+                   echo '<li  class="nav-item"><a class="nav-link" href="./projects.php">Projects</a></li>';
+               }
+           }
 
-             if(isset($_SESSION['userId'])){
-                echo ' ' ;
-
-            }else {
-                echo ' <li class="nav-item"><a class="nav-link" href="signup.php">Signup</a> </li>';
-            }
+           if (isset($_SESSION['userId'])) {
+               echo ' ';
+           } else {
+               echo ' <li class="nav-item"><a class="nav-link" href="signup.php">Signup</a> </li>';
+           }
            ?>
           
     
            </ul>
 
-            <?php
-                if(isset($_SESSION['userId'])){
-                    echo ' <form class="form-inline my-2 my-lg-0" action="includes/logout.inc.php" method="post">
+            <?php if (isset($_SESSION['userId'])) {
+                echo ' <form class="form-inline my-2 my-lg-0" action="includes/logout.inc.php" method="post">
                     <button class="signup-btn" type="submit" name="logout-submit">
                         Logout
                     </button>
-                </form>' ;
-
-                }else {
-                    echo '  <form class="form-inline my-2 my-lg-0" action="includes/login.inc.php" method="post">
+                </form>';
+            } else {
+                echo '  <form class="form-inline my-2 my-lg-0" action="includes/login.inc.php" method="post">
                     <input  class="form-control mr-sm-2" type="text" name="email" placeholder="email">
                     <input  class="form-control mr-sm-2" type="password" name="password" placeholder="Password">
                     <button type="submit" name="login-submit">Login</button>
                 </form>';
-                }
-
-                ?>
+            } ?>
            </div>
            <div>
           

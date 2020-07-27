@@ -26,8 +26,7 @@ require "./process.php";
             <th>Project Description</th> 
             <th>Project Deadline</th>
         </tr>
- <!-- The Modal -->
-                        
+           
 
         <?php while($row=$eng_projects->fetch_assoc()) :?>
                 <tr>     
